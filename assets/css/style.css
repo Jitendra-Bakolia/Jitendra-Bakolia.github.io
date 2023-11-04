@@ -1207,3 +1207,56 @@ section {
 #footer .credits {
   font-size: 13px;
 }
+
+
+/* Custom css */
+.language-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.language-item {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  height: 40px;
+}
+
+.language-item-heading {
+  display: flex;
+  padding: 10px 10px 5px 0px;
+}
+
+.language-item img {
+  width: 20px;
+  /* Adjust the width to match your desired size */
+  height: 20px;
+  /* Adjust the height to match your desired size */
+  margin-right: 10px;
+  /* Adjust the spacing between the image and text as needed */
+}
+
+.image-size-for-logo {
+  height: 15px !important; width: 25px !important;
+}
+
+.width-18{
+  width: 18px !important;
+}
+
+.width-182{
+  width: 184px;
+}
+
+.font-bold{
+  font-weight: bold;
+}
+
+.font-weight-500{
+  font-weight: 500;
+}

@@ -268,3 +268,32 @@
   new PureCounter();
 
 })()
+
+
+//& This method for know display size . . .  Start
+
+function isMobile() {
+  const mobileThreshold = 768;
+  return window.innerWidth < mobileThreshold;
+}
+
+function handleResize() {
+  const element = document.querySelector('.skill-heading');
+  if (isMobile()) {
+    if (element) {
+      element.classList.remove('width-182');
+    }
+  } else {
+    if (element) {
+      element.classList.add('width-182');
+    }
+  }
+}
+
+// Add an event listener for the "resize" event to call handleResize when the screen size changes
+window.addEventListener('resize', handleResize);
+
+// Call handleResize initially to determine the initial state
+handleResize();
+
+//& This method for know display size . . .  Start
