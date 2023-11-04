@@ -279,9 +279,11 @@ function isMobile() {
 
 function handleResize() {
   if (isMobile()) {
-    $(".font-weight-500").removeClass("width-182")
+    $(".removeForMobile").removeClass("width-182")
+    $(".addForModile").addClass("border-bottom")
   } else {
-    $(".font-weight-500").addClass("width-182")
+    $(".removeForMobile").addClass("width-182")
+    $(".addForModile").removeClass("border-bottom")
   }
 }
 

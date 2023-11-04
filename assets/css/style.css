@@ -1242,21 +1242,28 @@ section {
 }
 
 .image-size-for-logo {
-  height: 15px !important; width: 25px !important;
+  height: 15px !important;
+  width: 25px !important;
 }
 
-.width-18{
+.width-18 {
   width: 18px !important;
 }
 
-.width-182{
+.width-182 {
   width: 184px;
 }
 
-.font-bold{
+.font-bold {
   font-weight: bold;
 }
 
-.font-weight-500{
+.font-weight-500 {
   font-weight: 500;
+}
+
+.border-bottom {
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 8px;
+  border-radius: 5px;
 }
