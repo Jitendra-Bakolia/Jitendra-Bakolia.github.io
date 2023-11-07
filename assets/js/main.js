@@ -274,9 +274,11 @@ function handleResize() {
   if (isMobile()) {
     $(".removeForMobile").removeClass("width-182")
     $(".addForModile").addClass("border-bottom")
+    $(".language-item-heading").addClass("width-100")
   } else {
     $(".removeForMobile").addClass("width-182")
     $(".addForModile").removeClass("border-bottom")
+    $(".language-item-heading").removeClass("width-100")
   }
 }
 
