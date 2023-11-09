@@ -1260,3 +1260,7 @@ section {
 .width-100 {
   width: 100%;
 }
+
+.font-weight-600{
+  font-weight: 600;
+}
