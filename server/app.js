@@ -1,11 +1,16 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+const port = 3000;
+
+// Parse JSON bodies
+app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+  console.log('Received POST request with data:', req.body);
+  res.json({ message: 'Server received the data successfully!' });
+});
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Server is running at http://localhost:${port}`);
+});

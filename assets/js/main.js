@@ -293,3 +293,29 @@ window.addEventListener('resize', handleResize);
 handleResize();
 
 //& This method for know display size . . .  Start
+
+$("#submitButtonTest").click(() => {
+  console.log("🙈 🙉 🙊 Line 298 ~  :  ");
+  // Your data to be sent in the request
+  var requestData = {
+    key1: 'value1',
+    key2: 'value2'
+    // Add more key-value pairs as needed
+  };
+
+  // Making the Ajax request
+  $.ajax({
+    url: 'http://localhost:3000/', // Change this URL to your actual endpoint
+    type: 'GET',
+    contentType: 'application/json', // Set the content type according to your server's requirements
+    data: JSON.stringify(requestData), // Convert the data to JSON string
+    success: function (response) {
+      console.log('Success:', response);
+      // Handle the successful response here
+    },
+    error: function (error) {
+      console.error('Error:', error);
+      // Handle the error here
+    }
+  });
+})
