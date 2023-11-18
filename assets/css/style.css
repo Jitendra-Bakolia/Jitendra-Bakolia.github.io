@@ -263,7 +263,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/mySelf/back5.jpg") top right no-repeat;
+  background: url("../img/mySelf/back8.jpg") top right no-repeat;
   /* background: url("../img/mySelf/back4.jpg") top right no-repeat; */
   /* background: url("../img/mySelf/back3.jpg") top right no-repeat; */
   /* background: url("../img/mySelf/back2.jpg") top right no-repeat; */
@@ -282,7 +282,8 @@ h6 {
   #hero {
     width: 100%;
     height: 100vh;
-    background: url("../img/mySelf/back6.jpg") center center no-repeat;
+    background: url("../img/mySelf/back7.jpg") center center no-repeat;
+    /* background: url("../img/mySelf/back6.jpg") center center no-repeat; */
     background-size: cover;
     position: relative;
   }
