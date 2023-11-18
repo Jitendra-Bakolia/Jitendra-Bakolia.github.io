@@ -296,26 +296,31 @@ handleResize();
 
 $("#submitButtonTest").click(() => {
   console.log("🙈 🙉 🙊 Line 298 ~  :  ");
-  // Your data to be sent in the request
-  var requestData = {
+
+  const requestData = {
     key1: 'value1',
     key2: 'value2'
-    // Add more key-value pairs as needed
   };
 
-  // Making the Ajax request
+  // Make sure to adjust the URL based on your server setup
+  const url = 'http://localhost:3000/message';
+
+  // Using jQuery for the AJAX request
   $.ajax({
-    url: 'http://localhost:3000/', // Change this URL to your actual endpoint
-    type: 'GET',
-    contentType: 'application/json', // Set the content type according to your server's requirements
-    data: JSON.stringify(requestData), // Convert the data to JSON string
-    success: function (response) {
-      console.log('Success:', response);
-      // Handle the successful response here
+    url: url,
+    type: 'GET', // Change to 'POST' if needed
+    contentType: 'application/json',
+    // If you need to send data, use the data property
+    // data: JSON.stringify(requestData),
+    success: function (data) {
+      console.log('Server response:', data);
+      // Handle the response data as needed
     },
     error: function (error) {
-      console.error('Error:', error);
-      // Handle the error here
+      console.error('Error during AJAX request:', error);
+      // Handle errors
     }
   });
+
+
 })
