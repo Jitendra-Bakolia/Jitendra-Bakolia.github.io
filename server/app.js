@@ -1,10 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const path = require("path");
 const app = express();
 const port = 3000;
 
 // Parse JSON bodies
 app.use(bodyParser.json());
+
+app.use(express.static(path.join(__dirname,"../client/assets")))
 
 // Custom middleware for handling CORS
 app.use((req, res, next) => {
@@ -23,6 +26,10 @@ app.use((req, res, next) => {
 app.get('/message', (req, res) => {
   console.log('Received GET request with data:', req.body);
   res.json({ message: 'Server received the data successfully!' });
+});
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname,"../client","index.html"));
 });
 
 app.listen(port, () => {
