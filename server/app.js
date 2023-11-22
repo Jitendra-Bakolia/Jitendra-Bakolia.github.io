@@ -32,7 +32,7 @@ app
       request.headers['Content-Type'] = 'application/json';
     }
 
-    response.header("Access-Control-Allow-Origin", "*"); // allow requests from all origins
+    response.header("Access-Control-Allow-Origin", "https://jiten.tech"); // allow requests from all origins
     response.header(
       "Access-Control-Allow-Methods",
       "GET,HEAD,OPTIONS,POST,PUT,DELETE"
