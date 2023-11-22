@@ -44,6 +44,7 @@
 
   <!-- Template Main CSS File -->
   <link href="/css/style.css" rel="stylesheet">
+  <link href="/lib/css/toastr.css" rel="stylesheet">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-BKQWREZH0J"></script>
@@ -831,20 +832,20 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form class="php-email-form" id="emailSendToDeveloper">
               <div class="row">
                 <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                  <input type="text" name="senderName" class="form-control" id="senderName" placeholder="Your Name" required>
                 </div>
                 <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="senderEmail" id="senderEmail" placeholder="Your Email" required>
                 </div>
               </div>
               <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                <input type="text" class="form-control" name="senderSubject" id="senderSubject" placeholder="Subject" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                <textarea class="form-control" name="senderMessage" id="senderMessage" rows="5" placeholder="Message" required></textarea>
               </div>
               <div class="my-3">
                 <div class="loading">Loading</div>
@@ -894,17 +895,20 @@
   <script src="/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="/vendor/typed.js/typed.umd.js"></script>
   <script src="/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="/vendor/php-email-form/validate.js"></script>
 
   <!-- jQuery -->
   <script src="/lib/js/jQuery.js"></script>
+  <script src="/lib/js/toastr.js"></script>
+  <!-- <script src="/lib/js/jquerymy-1.2.14.js"></script> -->
+  <script src="/lib/js/jquery.validate.min.js"></script>
+  <!-- <script src="/lib/js/jquery-ui.js"></script> -->
 
   <!-- Template Main JS File -->
   <script src="/js/main.js"></script>
 
 
-  <script src="/js/communication/communication.js"></script>
   <script src="/js/helper/constant.js"></script>
+  <script src="/js/communication/communication.js"></script>
 
 </body>
 

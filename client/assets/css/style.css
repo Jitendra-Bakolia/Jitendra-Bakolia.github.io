@@ -1282,3 +1282,9 @@ section {
 .mt-0{
   margin-top: 0 !important;
 }
+
+.invalid-field,
+label.error {
+	color: red !important;
+	font-size: 12px !important;
+}

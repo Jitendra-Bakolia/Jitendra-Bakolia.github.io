@@ -4,7 +4,7 @@ const communication = require('../controller/common/communication')
 
 
 // All Communication routes . . . 
-router.get("/send-email-to-developer", communication.sendEmailToDeveloper);
+router.post("/send-email-to-developer", communication.sendEmailToDeveloper);
 
 
 module.exports = router;

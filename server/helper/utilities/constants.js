@@ -17,7 +17,8 @@ const page = {
 }
 
 const serverError = {
-    INTERNAL_SERVER_ERROR : "Internal Server Error",
+    INTERNAL_SERVER_ERROR: "Internal Server Error",
+    EMAIL_SEND: "Email sent successfully.",
 }
 
 module.exports = {
