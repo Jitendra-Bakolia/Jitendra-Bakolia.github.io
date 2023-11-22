@@ -4,7 +4,7 @@ $("#submitButtonTest").click(() => {
   
     // Using jQuery for the AJAX request
     $.ajax({
-      url: 'http://localhost:3005/communication/send-email-to-developer',
+      url: 'http://localhost:3000/communication/send-email-to-developer',
       type: 'GET', // Change to 'POST' if needed
       contentType: 'application/json',
       // If you need to send data, use the data property

@@ -1,5 +1,5 @@
 const port = {
-    SERVER_PORT: 3005,
+    SERVER_PORT: 3000,
 }
 
 const path = {
