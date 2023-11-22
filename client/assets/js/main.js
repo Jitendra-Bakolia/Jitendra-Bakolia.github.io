@@ -291,36 +291,3 @@ window.addEventListener('resize', handleResize);
 
 // Call handleResize initially to determine the initial state
 handleResize();
-
-//& This method for know display size . . .  Start
-
-$("#submitButtonTest").click(() => {
-  console.log("🙈 🙉 🙊 Line 298 ~  :  ");
-
-  const requestData = {
-    key1: 'value1',
-    key2: 'value2'
-  };
-
-  // Make sure to adjust the URL based on your server setup
-  const url = 'http://localhost:3000/message';
-
-  // Using jQuery for the AJAX request
-  $.ajax({
-    url: url,
-    type: 'GET', // Change to 'POST' if needed
-    contentType: 'application/json',
-    // If you need to send data, use the data property
-    // data: JSON.stringify(requestData),
-    success: function (data) {
-      console.log('Server response:', data);
-      // Handle the response data as needed
-    },
-    error: function (error) {
-      console.error('Error during AJAX request:', error);
-      // Handle errors
-    }
-  });
-
-
-})

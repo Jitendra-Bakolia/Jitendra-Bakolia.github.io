@@ -1,37 +1,55 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+const Http = require("http");
+const createError = require("http-errors");
+const express = require("express");
 const path = require("path");
-const app = express();
-const port = 3000;
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+const bodyParser = require('body-parser');
+const constants = require('./helper/utilities/constants');
 
-// Parse JSON bodies
-app.use(bodyParser.json());
+let app = express();
 
-app.use(express.static(path.join(__dirname,"../client/assets")))
-
-// Custom middleware for handling CORS
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*'); // Set the appropriate origin
-  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE'); // Specify the allowed HTTP methods
-  res.header('Access-Control-Allow-Headers', 'Content-Type'); // Specify the allowed headers
-
-  if (req.method === 'OPTIONS') {
-    // Handle preflight requests
-    res.sendStatus(200);
-  } else {
+app
+  .use(logger("dev"))
+  .use(express.static(path.join(__dirname,"../client/assets")))
+  .use(express.json({ limit: "100mb" }))
+  .use(express.urlencoded({ extended: true, limit: "100mb", parameterLimit: 1000000 }))
+  .use(cookieParser())
+  .disable("x-powered-by")
+  .use((req, res, next) => {
+    if (req.get('x-amz-sns-message-type')) {
+      req.headers['content-type'] = 'application/json';
+    }
     next();
-  }
+  })
+  .use(bodyParser.json({ limit: '50mb' }))
+  .use(bodyParser.urlencoded({ limit: '50mb', extended: false }))
+  .use("", require("./routes/components.js"))
+  .use("/common", require("./routes/common.js"))
+  .use("/communication", require("./routes/communication.js"))
+  .use((request, response, next) => {
+    if (request.get('x-amz-sns-message-type')) {
+      request.headers['Content-Type'] = 'application/json';
+    }
+
+    response.header("Access-Control-Allow-Origin", "*"); // allow requests from all origins
+    response.header(
+      "Access-Control-Allow-Methods",
+      "GET,HEAD,OPTIONS,POST,PUT,DELETE"
+    );
+    response.header(
+      "Access-Control-Allow-Headers",
+      "Access-Control-Allow-Headers, Origin, X-Requested-With, Content-Type, Accept, Authorization, refreshToken"
+    );
+    // response.header("Content-Type: application/json", true);
+    next();
+  })
+  .use((req, res, next) => {
+    next(createError(404));
+  });
+
+app.listen(constants.port.SERVER_PORT, () => {
+  console.log(`Main server is running on at http://localhost:${constants.port.SERVER_PORT}`);
 });
 
-app.get('/message', (req, res) => {
-  console.log('Received GET request with data:', req.body);
-  res.json({ message: 'Server received the data successfully!' });
-});
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname,"../client","index.html"));
-});
-
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+Http.createServer(app);
