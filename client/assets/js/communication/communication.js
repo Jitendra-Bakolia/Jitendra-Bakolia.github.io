@@ -1,10 +1,10 @@
 //& This method for know display size . . .  Start
 $("#submitButtonTest").click(() => {
-    console.log("🙈 🙉 🙊 Line 4 ~  :  ");
+    console.log("Path :- ",path.SERVER , "  -  ", path.COMMUNICATION ,"  -  ", '/send-email-to-developer');
   
     // Using jQuery for the AJAX request
     $.ajax({
-      url: 'https://jiten.tech/communication/send-email-to-developer',
+      url: path.SERVER + path.COMMUNICATION + '/send-email-to-developer',
       type: 'GET', // Change to 'POST' if needed
       contentType: 'application/json',
       // If you need to send data, use the data property

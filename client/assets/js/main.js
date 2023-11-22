@@ -1,8 +1,6 @@
 (function () {
   "use strict";
 
-  console.log("🙈 🙉 🙊 Line 4 ~  :  ");
-
   /**
    * Easy selector helper function
    */
