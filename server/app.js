@@ -6,7 +6,6 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const bodyParser = require('body-parser');
 const constants = require('./helper/utilities/constants');
-const os = require("os")
 
 let app = express();
 
@@ -48,8 +47,6 @@ app
   .use((req, res, next) => {
     next(createError(404));
   });
-
-console.log(`🙈 🙉 🙊 ~ file: app.js:53 ~ app.listen ~ constants.port.SERVER_PORT : `, constants.port.SERVER_PORT)
 
 app.listen(constants.port.SERVER_PORT, () => {
   console.log(`Main server is running on at http://localhost:${constants.port.SERVER_PORT}`);
