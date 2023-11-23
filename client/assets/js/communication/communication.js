@@ -67,7 +67,6 @@ function sendEmailToDeveloper() {
     contentType: 'application/json',
     data: JSON.stringify(data),
     success: function (data) {
-      console.log('Server response:', data);
       toastr.remove();
       toastr.success(data.message);
       $("#emailSendToDeveloper")[0].reset();
@@ -75,7 +74,6 @@ function sendEmailToDeveloper() {
     error: function (error) {
       toastr.remove();
       toastr.error(error.responseJSON.message);
-      console.error('Server error : ', error);
     }
   });
 }
