@@ -1,5 +1,6 @@
+const os = require("os")
 const port = {
-    SERVER_PORT: 3000,
+    SERVER_PORT: os.hostname() == "srv-clderojmot1c73dnopd0-hibernate-5ff89db98f-w86fc" ? 3000 : 3005,
 }
 
 const path = {
