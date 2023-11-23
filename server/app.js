@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const bodyParser = require('body-parser');
 const constants = require('./helper/utilities/constants');
-const os = require("node:os")
+const os = require("os")
 
 let app = express();
 
