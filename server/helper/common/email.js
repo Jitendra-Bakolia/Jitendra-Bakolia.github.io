@@ -9,10 +9,10 @@ module.exports.sendMail = async function (emailData, fileName) {
     // Create a transporter using email service credentials
     const transporter = await exports.createTransport();
 
-    // Setting email heading . . .
+    // Setting email heading . . . 
     emailData.heading = constants.emailHeading.FROM_JITEN_TECH
 
-    // Set up the email options
+    // Set up the email options . . . 
     const mail = await exports.mailOptions(emailData, constants.emailType.SEND_TO_DEVELOPER, constants.imagePath.LOGO, fileName);
 
     // Send the email

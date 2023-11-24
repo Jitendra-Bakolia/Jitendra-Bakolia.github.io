@@ -47,6 +47,7 @@ $("#emailSendToDeveloper").validate({
 });
 
 function sendEmailToDeveloper() {
+
   // toastr.remove();
   // toastr.success("Message testing . . . ");
   // toastr.info("Message testing . . . ");
@@ -60,6 +61,13 @@ function sendEmailToDeveloper() {
     message: $("#senderMessage").val(),
   }
 
+  // Remove click features . . . 
+  $("#submitButtonTest").attr("disabled", "disabled");
+  $("#submitButtonTest").addClass("loading");
+  $("#sendMessage").addClass("hidden");
+  $("#sendingMessage").removeClass("hidden");
+
+
   var fileInput = $("#senderFile")[0]; // or use $("#senderFile").get(0);
   var file = fileInput.files[0];
   var formData = null;
@@ -68,7 +76,6 @@ function sendEmailToDeveloper() {
     formData = new FormData();
     formData.append('file', file);
   }
-
 
   // Using jQuery for the AJAX request
   $.ajax({
@@ -79,9 +86,17 @@ function sendEmailToDeveloper() {
     processData: false,
     contentType: false,
     success: function (data) {
+
+      // Add click features again . . . 
+      $("#submitButtonTest").removeAttr("disabled");
+      $("#submitButtonTest").removeClass("loading");
+      $("#sendMessage").removeClass("hidden");
+      $("#sendingMessage").addClass("hidden");
+
       toastr.remove();
       toastr.success(data.message);
       $("#emailSendToDeveloper")[0].reset();
+
     },
     error: function (error) {
       toastr.remove();

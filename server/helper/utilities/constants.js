@@ -36,8 +36,8 @@ const emailInfo = {
     // PROVIDER_PORT: 465,
     PROVIDER_PORT: 587,
 
-    // DEVELOPER_EMAIL: 'jitendrabakolia.dev@gmail.com',
-    DEVELOPER_EMAIL: 'jitenagami@gmail.com',
+    DEVELOPER_EMAIL: 'jitendrabakolia.dev@gmail.com',
+    // DEVELOPER_EMAIL: 'jitenagami@gmail.com',
 }
 
 const emailType = {
