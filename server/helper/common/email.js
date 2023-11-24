@@ -1,8 +1,10 @@
 const nodemailer = require('nodemailer');
+const path = require('path');
 const constants = require("../utilities/constants");
 const emailTemplate = require('../common/email-templates');
+const commonHelper = require('../../helper/common/common') 
 
-module.exports.sendMail = async function (emailData) {
+module.exports.sendMail = async function (emailData, fileName) {
 
     // Create a transporter using email service credentials
     const transporter = await exports.createTransport();
@@ -11,8 +13,7 @@ module.exports.sendMail = async function (emailData) {
     emailData.heading = constants.emailHeading.FROM_JITEN_TECH
 
     // Set up the email options
-    const mail = await exports.mailOptions(emailData, constants.emailType.SEND_TO_DEVELOPER, constants.imagePath.LOGO);
-    console.log(`🙈 🙉 🙊 ~ file: email.js:15 ~ mail : `, mail)
+    const mail = await exports.mailOptions(emailData, constants.emailType.SEND_TO_DEVELOPER, constants.imagePath.LOGO, fileName);
 
     // Send the email
     transporter.sendMail(mail, (error, info) => {
@@ -21,6 +22,10 @@ module.exports.sendMail = async function (emailData) {
             return false;
         } else {
             console.log('Email sent: ' + info.response);
+            commonHelper.deleteAllFilesInFolder(constants.deleteFile.IMAGES);
+            setTimeout(() => {
+                commonHelper.deleteAllFilesInFolder(constants.deleteFile.BINARY);
+            }, 1000);
             return true
         }
     });
@@ -39,7 +44,20 @@ module.exports.createTransport = async function () {
     });
 }
 
-module.exports.mailOptions = async function (emailData, type, imageLogo) {
+module.exports.mailOptions = async function (emailData, type, imageLogo, fileName) {
+
+    var fileData = [];
+    var fileRoot = path.join(__dirname + '../../../temporary/files')
+
+    if (fileName) {
+        fileData = [
+            {
+                filename: fileName,
+                path: fileRoot + '/' + fileName,
+            }
+        ]
+    }
+
     let message = await emailTemplate.emailTemplate(emailData, type, imageLogo);
     return mailOptions = {
         from: `${emailData.name} ${constants.emailInfo.PROVIDER_USERNAME}`,
@@ -51,7 +69,8 @@ module.exports.mailOptions = async function (emailData, type, imageLogo) {
                 filename: 'logo.png', //! Name of the file as we want it to appear in the email
                 path: constants.path.IMAGE_ROOT + imageLogo, //! Path of image
                 cid: 'logo',
-            }
+            },
+            ...fileData
         ]
     };
 }

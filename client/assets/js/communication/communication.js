@@ -60,12 +60,24 @@ function sendEmailToDeveloper() {
     message: $("#senderMessage").val(),
   }
 
+  var fileInput = $("#senderFile")[0]; // or use $("#senderFile").get(0);
+  var file = fileInput.files[0];
+  var formData = null;
+
+  if (file) {
+    formData = new FormData();
+    formData.append('file', file);
+  }
+
+
   // Using jQuery for the AJAX request
   $.ajax({
-    url: path.SERVER + path.COMMUNICATION + '/send-email-to-developer',
+    url: path.SERVER + path.COMMUNICATION + `/send-email-to-developer?data=${JSON.stringify(data)}`,
     type: 'POST',
     contentType: 'application/json',
-    data: JSON.stringify(data),
+    data: formData,
+    processData: false,
+    contentType: false,
     success: function (data) {
       toastr.remove();
       toastr.success(data.message);

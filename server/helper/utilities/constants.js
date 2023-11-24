@@ -8,7 +8,7 @@ const path = {
     CLIENT: "../client",
     COMPONENT: "../client/src/components",
 
-    IMAGE_ROOT: root.resolve(__dirname, '../../../client/assets/img')
+    IMAGE_ROOT: root.resolve(__dirname, '../../../client/assets/img'),
 }
 
 const page = {
@@ -22,7 +22,7 @@ const page = {
 
 const serverError = {
     INTERNAL_SERVER_ERROR: "Internal Server Error",
-    EMAIL_SEND: "Email sent successfully.",
+    EMAIL_SEND: "Your message has been sent. Thank you!",
     SOMTHING_WENT_WRONG: "Something went wrong!",
 }
 
@@ -56,6 +56,11 @@ const imagePath = {
     LOGO : "/logo-name-clear.png"
 }
 
+const deleteFile = {
+    IMAGES: 1,
+    BINARY: 2
+}
+
 module.exports = {
     port,
     path,
@@ -65,5 +70,6 @@ module.exports = {
     emailType,
     emailHeading,
     web,
-    imagePath
+    imagePath,
+    deleteFile
 };
