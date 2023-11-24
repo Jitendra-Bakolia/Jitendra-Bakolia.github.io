@@ -5,16 +5,21 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const bodyParser = require('body-parser');
+const compression = require("compression");
 const constants = require('./helper/utilities/constants');
 
 let app = express();
 
 app
   .use(logger("dev"))
-  .use(express.static(path.join(__dirname,"../client/assets")))
+  .use(express.static(path.join(__dirname, "../client/assets"), {
+    // Cache will save for one day in users browser . . .
+    maxAge: 86400000,
+  }))
   .use(express.json({ limit: "100mb" }))
   .use(express.urlencoded({ extended: true, limit: "100mb", parameterLimit: 1000000 }))
   .use(cookieParser())
+  .use(compression())
   .disable("x-powered-by")
   .use((req, res, next) => {
     if (req.get('x-amz-sns-message-type')) {
