@@ -1,3 +1,5 @@
+const root = require("path");
+
 const port = {
     SERVER_PORT: 3005,
 }
@@ -6,7 +8,7 @@ const path = {
     CLIENT: "../client",
     COMPONENT: "../client/src/components",
 
-    IMAGE_ROOT: "../../../client/assets/img/"
+    IMAGE_ROOT: root.resolve(__dirname, '../../../client/assets/img')
 }
 
 const page = {
@@ -34,8 +36,8 @@ const emailInfo = {
     // PROVIDER_PORT: 465,
     PROVIDER_PORT: 587,
 
-    DEVELOPER_EMAIL: 'jitendrabakolia.dev@gmail.com',
-    // DEVELOPER_EMAIL: 'jitenagami@gmail.com',
+    // DEVELOPER_EMAIL: 'jitendrabakolia.dev@gmail.com',
+    DEVELOPER_EMAIL: 'jitenagami@gmail.com',
 }
 
 const emailType = {
@@ -50,6 +52,10 @@ const web = {
     JITEN : "https://jiten.tech"
 }
 
+const imagePath = {
+    LOGO : "/logo-name-clear.png"
+}
+
 module.exports = {
     port,
     path,
@@ -58,5 +64,6 @@ module.exports = {
     emailInfo,
     emailType,
     emailHeading,
-    web
+    web,
+    imagePath
 };

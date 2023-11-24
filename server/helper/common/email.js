@@ -11,7 +11,8 @@ module.exports.sendMail = async function (emailData) {
     emailData.heading = constants.emailHeading.FROM_JITEN_TECH
 
     // Set up the email options
-    const mail = await exports.mailOptions(emailData, constants.emailType.SEND_TO_DEVELOPER);
+    const mail = await exports.mailOptions(emailData, constants.emailType.SEND_TO_DEVELOPER, constants.imagePath.LOGO);
+    console.log(`🙈 🙉 🙊 ~ file: email.js:15 ~ mail : `, mail)
 
     // Send the email
     transporter.sendMail(mail, (error, info) => {
@@ -34,16 +35,23 @@ module.exports.createTransport = async function () {
             user: constants.emailInfo.PROVIDER_USERNAME,
             pass: constants.emailInfo.PROVIDER_PASSWORD,
         }
-    
+
     });
 }
 
-module.exports.mailOptions = async function (emailData, type) {
-    let message = await emailTemplate.emailTemplate(emailData, type);
+module.exports.mailOptions = async function (emailData, type, imageLogo) {
+    let message = await emailTemplate.emailTemplate(emailData, type, imageLogo);
     return mailOptions = {
         from: `${emailData.name} ${constants.emailInfo.PROVIDER_USERNAME}`,
         to: constants.emailInfo.DEVELOPER_EMAIL,
         subject: emailData.subject,
         html: message,
+        attachments: [
+            {
+                filename: 'logo.png', //! Name of the file as we want it to appear in the email
+                path: constants.path.IMAGE_ROOT + imageLogo, //! Path of image
+                cid: 'logo',
+            }
+        ]
     };
 }

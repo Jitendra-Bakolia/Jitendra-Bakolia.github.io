@@ -109,7 +109,7 @@ module.exports.emailTemplate = async function (data, type) {
 								<tr>
 									<td align="center" valign="top" style="padding: 20px 10px 20px 10px;">
 										<a href="${constants.web.JITEN}" target="_blank">
-											<img src="${constants.path.IMAGE_ROOT}logo-name-clear.png" width="200"
+											<img src="cid:logo" width="150"
 												style="display: block;  font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; font-size: 18px;"
 												border="0">
 										</a>
@@ -128,7 +128,7 @@ module.exports.emailTemplate = async function (data, type) {
 								<tr>
 									<td bgcolor="#f4f4f4" align="left"
 										style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 18px;">
-										<p style="margin-top: 10px; text-align: center;">${moment().tz('Asia/Kolkata').format('DD/MM/YYYY, hh:mm:ss a')}</p>
+										<p style="margin-top: 20px; text-align: center;">${moment().tz('Asia/Kolkata').format('DD/MM/YYYY, hh:mm:ss a')}</p>
 									</td>
 								</tr>
 							</table>
