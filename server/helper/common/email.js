@@ -7,8 +7,11 @@ module.exports.sendMail = async function (emailData) {
     // Create a transporter using email service credentials
     const transporter = await exports.createTransport();
 
+    // Setting email heading . . .
+    emailData.heading = constants.emailHeading.FROM_JITEN_TECH
+
     // Set up the email options
-    const mail = await exports.mailOptions(emailData);
+    const mail = await exports.mailOptions(emailData, constants.emailType.SEND_TO_DEVELOPER);
 
     // Send the email
     transporter.sendMail(mail, (error, info) => {
@@ -35,8 +38,8 @@ module.exports.createTransport = async function () {
     });
 }
 
-module.exports.mailOptions = async function (emailData) {
-    let message = await emailTemplate.emailTemplate(emailData);
+module.exports.mailOptions = async function (emailData, type) {
+    let message = await emailTemplate.emailTemplate(emailData, type);
     return mailOptions = {
         from: `${emailData.name} ${constants.emailInfo.PROVIDER_USERNAME}`,
         to: constants.emailInfo.DEVELOPER_EMAIL,

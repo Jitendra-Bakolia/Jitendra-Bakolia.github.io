@@ -4,7 +4,9 @@ const port = {
 
 const path = {
     CLIENT: "../client",
-    COMPONENT: "../client/src/components"
+    COMPONENT: "../client/src/components",
+
+    IMAGE_ROOT: "../../../client/assets/img/"
 }
 
 const page = {
@@ -33,6 +35,19 @@ const emailInfo = {
     PROVIDER_PORT: 587,
 
     DEVELOPER_EMAIL: 'jitendrabakolia.dev@gmail.com',
+    // DEVELOPER_EMAIL: 'jitenagami@gmail.com',
+}
+
+const emailType = {
+    SEND_TO_DEVELOPER: 1
+}
+
+const emailHeading = {
+    FROM_JITEN_TECH : "Email Received from Jiten.Tech"
+}
+
+const web = {
+    JITEN : "https://jiten.tech"
 }
 
 module.exports = {
@@ -41,4 +56,7 @@ module.exports = {
     page,
     serverError,
     emailInfo,
+    emailType,
+    emailHeading,
+    web
 };
