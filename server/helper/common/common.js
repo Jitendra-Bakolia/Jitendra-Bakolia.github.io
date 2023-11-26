@@ -27,9 +27,6 @@ module.exports.deleteAllFilesInFolder = async function (deleteFile) {
         fs.unlinkSync(filePath);
       });
 
-      console.log("🙈 🙉 🙊 Line 29 ~  : All files removed ");
-      console.log("🙈 🙉 🙊 Line 31 ~  :  ",fs.readdirSync(folderPath));
-
     } catch (error) {
       console.error('Error deleting files: function deleteAllFilesInFolder ', error);
     }
