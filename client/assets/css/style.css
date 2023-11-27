@@ -1278,16 +1278,30 @@ section {
   height: 30px !important;
 }
 
-.mt-0{
+.mt-0 {
   margin-top: 0 !important;
 }
 
 .invalid-field,
 label.error {
-	color: red !important;
-	font-size: 12px !important;
+  color: red !important;
+  font-size: 12px !important;
 }
 
-.hidden { 
+.hidden {
   display: none !important;
+}
+
+.download-button {
+  background: #0563bb;
+  border: 0;
+  padding: 10px 35px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.download-button:hover {
+  background: #1e88e5;
+  color: white !important;
 }

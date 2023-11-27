@@ -15,5 +15,8 @@ router.get("/get-begenieus-page", components.beGenieUs)
 router.get("/get-nediaz-page", components.nediaz)
 router.get("/get-webtech-page", components.webTech)
 
+// Download Resume . . .
+router.get("/download-resume", components.downloadResume);
+
 
 module.exports = router;

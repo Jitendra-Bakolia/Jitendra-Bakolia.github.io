@@ -72,3 +72,13 @@ module.exports.webTech = async function (req, res) {
         res.status(httpStatus.SERVER_ERROR).send(constants.serverError.INTERNAL_SERVER_ERROR);
     }
 }
+
+module.exports.downloadResume = async function (req, res) {
+    try{
+        const resumePath = path.join(__dirname, '../../../client/assets/img/resume/Jitendra.pdf');
+        res.status(httpStatus.OK).download(resumePath);
+    } catch (error) {
+        console.error(`Error occurs while downloading resume:`, error);
+        res.status(httpStatus.SERVER_ERROR).send(constants.serverError.INTERNAL_SERVER_ERROR);
+    }
+}
