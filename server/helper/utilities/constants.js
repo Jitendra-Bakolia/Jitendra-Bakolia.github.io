@@ -18,6 +18,7 @@ const page = {
     BEGENIEUS: "begenieus.html",
     NEDIAZ: "nediaz.html",
     WEBTECH: "webtech.html",
+    PORTFOLIO: "portfolio.html",
 }
 
 const serverError = {

@@ -73,6 +73,18 @@ module.exports.webTech = async function (req, res) {
     }
 }
 
+// Portfolio page . . .
+module.exports.portFolio = async function (req, res) {
+    try {
+        const portFolioPath = path.join(clientPath, constants.path.COMPONENT, constants.page.PORTFOLIO);
+        res.status(httpStatus.OK).sendFile(portFolioPath);
+    } catch (error) {
+        console.error(`Error occurs while serving ${constants.page.WEBTECH}:`, error);
+        res.status(httpStatus.SERVER_ERROR).send(constants.serverError.INTERNAL_SERVER_ERROR);
+    }
+}
+
+// Download resume . . .
 module.exports.downloadResume = async function (req, res) {
     try{
         const resumePath = path.join(__dirname, '../../../client/assets/img/resume/Jitendra.pdf');

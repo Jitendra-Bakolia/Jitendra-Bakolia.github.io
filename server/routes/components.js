@@ -14,6 +14,7 @@ router.get("/get-smartcontectmanager-page", components.smartContectManager)
 router.get("/get-begenieus-page", components.beGenieUs)
 router.get("/get-nediaz-page", components.nediaz)
 router.get("/get-webtech-page", components.webTech)
+router.get("/get-portfolio-page", components.portFolio)
 
 // Download Resume . . .
 router.get("/download-resume", components.downloadResume);
