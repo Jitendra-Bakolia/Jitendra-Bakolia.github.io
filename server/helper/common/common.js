@@ -17,7 +17,6 @@ module.exports.deleteAllFilesInFolder = async function (deleteFile) {
 
       // Get a list of all files in the folder
       const files = fs.readdirSync(folderPath);
-      console.log(`🙈 🙉 🙊 ~ file: common.js:20 ~ module.exports.deleteAllFilesInFolder ~ files : `, files)
   
       // Iterate through the files and delete each one
       files.forEach((file) => {
