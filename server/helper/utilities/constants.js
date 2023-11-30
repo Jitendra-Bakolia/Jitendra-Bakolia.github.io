@@ -62,6 +62,21 @@ const deleteFile = {
     BINARY: 2
 }
 
+const config = {
+    DB_CONNECTION_URL: "mongodb+srv://bablubakolia:Jiten1998@cluster0.zcvupm0.mongodb.net/JitenTech?retryWrites=true&w=majority",
+}
+
+const status = {
+    ACTIVE: 1,
+    INACTIVE: 0,
+    DELETED: 2,
+}
+
+const state = {
+    ACTIVE: true,
+    INACTIVE: false,
+}
+
 module.exports = {
     port,
     path,
@@ -72,5 +87,8 @@ module.exports = {
     emailHeading,
     web,
     imagePath,
-    deleteFile
+    deleteFile,
+    config,
+    status,
+    state
 };
