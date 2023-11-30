@@ -80,7 +80,18 @@ module.exports.portFolio = async function (req, res) {
         const portFolioPath = path.join(clientPath, constants.path.COMPONENT, constants.page.PORTFOLIO);
         res.status(httpStatus.OK).sendFile(portFolioPath);
     } catch (error) {
-        console.error(`Error occurs while serving ${constants.page.WEBTECH}:`, error);
+        console.error(`Error occurs while serving ${constants.page.PORTFOLIO}:`, error);
+        res.status(httpStatus.SERVER_ERROR).send(constants.serverError.INTERNAL_SERVER_ERROR);
+    }
+}
+
+// Show email page . . .
+module.exports.showEmails = async function (req, res) {
+    try {
+        const emailList = path.join(clientPath, constants.path.COMPONENT, constants.page.EMAILS);
+        res.status(httpStatus.OK).sendFile(emailList);
+    } catch (error) {
+        console.error(`Error occurs while serving ${constants.page.EMAILS}:`, error);
         res.status(httpStatus.SERVER_ERROR).send(constants.serverError.INTERNAL_SERVER_ERROR);
     }
 }

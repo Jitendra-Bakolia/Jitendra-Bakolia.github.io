@@ -16,6 +16,9 @@ router.get("/get-nediaz-page", components.nediaz)
 router.get("/get-webtech-page", components.webTech)
 router.get("/get-portfolio-page", components.portFolio)
 
+//Show all emails . . .
+router.get("/show-emails", components.showEmails)
+
 // Download Resume . . .
 router.get("/download-resume", components.downloadResume);
 

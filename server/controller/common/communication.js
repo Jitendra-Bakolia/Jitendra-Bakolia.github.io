@@ -58,3 +58,15 @@ module.exports.sendEmailToDeveloper = async function (req, res) {
         res.status(httpStatus.SERVER_ERROR).json({ message: constants.serverError.SOMTHING_WENT_WRONG });
     }
 }
+
+
+// Fetch email list . . .
+module.exports.fetchEmailList = async function (req, res) {
+    try {
+        let emailList = await commonDao.fetchAllEmailInfo();
+        res.status(httpStatus.OK).json({ emails: emailList });
+    } catch (error) {
+        console.error(`Error occurs while sending email list : `, error);
+        res.status(httpStatus.SERVER_ERROR).json({ message: constants.serverError.SOMTHING_WENT_WRONG });
+    }
+}

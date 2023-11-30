@@ -8,6 +8,7 @@ const upload = multer({ dest: path.join(__dirname, '../temporary/upload/') });
 
 // All Communication routes . . . 
 router.post("/send-email-to-developer", [upload.single('file')], communication.sendEmailToDeveloper);
+router.get("/fetch-email-list", communication.fetchEmailList);
 
 
 module.exports = router;

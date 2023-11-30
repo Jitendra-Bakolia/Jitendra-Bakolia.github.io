@@ -19,6 +19,7 @@ const page = {
     NEDIAZ: "nediaz.html",
     WEBTECH: "webtech.html",
     PORTFOLIO: "portfolio.html",
+    EMAILS: "email-list.html",
 }
 
 const serverError = {
