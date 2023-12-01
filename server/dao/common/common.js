@@ -1,5 +1,7 @@
-require("../../config/config");
+const dbConfig = require("../../config/config");
 const model = require("../../models/models");
+
+dbConfig.dbConnection();
 
 exports.saveEmailInfo = async function (data) {
     return await model.email.create(data);
