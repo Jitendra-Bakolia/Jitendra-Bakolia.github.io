@@ -1,3 +1,4 @@
+require("../../config/db.connection");
 const model = require("../../models/models");
 
 exports.saveEmailInfo = async function (data) {
