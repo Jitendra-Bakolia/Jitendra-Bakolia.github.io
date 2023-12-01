@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const compression = require("compression");
 const constants = require('./helper/utilities/constants');
 require('dotenv').config();
+require("./config/config");
 
 let app = express();
 
