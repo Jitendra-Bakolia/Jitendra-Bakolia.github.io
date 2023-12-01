@@ -7,7 +7,8 @@ const logger = require("morgan");
 const bodyParser = require('body-parser');
 const compression = require("compression");
 const constants = require('./helper/utilities/constants');
-// require("../server/config/db.connection");
+require('dotenv').config();
+require("./config/db.connection");
 
 let app = express();
 
