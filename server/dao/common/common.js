@@ -1,9 +1,9 @@
 // const dbConfig = require("../../config/config");
-const dbConfig = require("../../config/dbConnection")
 const model = require("../../models/models");
+const databaseConfigration = require("../../configration/configration");
 
 setTimeout(() => {
-    dbConfig.dbConnection();
+    databaseConfigration.getMongooseConfigration()
 }, 5000);
 
 exports.saveEmailInfo = async function (data) {
