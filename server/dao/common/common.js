@@ -1,7 +1,9 @@
 const dbConfig = require("../../config/config");
 const model = require("../../models/models");
 
-dbConfig.dbConnection();
+setTimeout(() => {
+    dbConfig.dbConnection();
+}, 5000);
 
 exports.saveEmailInfo = async function (data) {
     return await model.email.create(data);
