@@ -1,4 +1,5 @@
-const dbConfig = require("../../config/config");
+// const dbConfig = require("../../config/config");
+const dbConfig = require("../../config/dbConnection")
 const model = require("../../models/models");
 
 setTimeout(() => {
