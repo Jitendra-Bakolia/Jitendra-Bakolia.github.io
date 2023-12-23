@@ -82,6 +82,7 @@ module.exports.sendEmailToDevashu = async function (req, res) {
             name: req.body.name,
             email: req.body.email,
             message: req.body.message,
+            receiver: constants.receiver.ASHU,
         }
 
         await email.sendMailToAshu(emailObj);

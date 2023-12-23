@@ -28,8 +28,14 @@ const serverError = {
     SOMTHING_WENT_WRONG: "Something went wrong!",
 }
 
+const receiver = {
+    JITEN: 1,
+    ASHU: 2,
+
+}
+
 const emailInfo = {
-    SERVICE_PROVIDER : 'smtp.gmail.com',
+    SERVICE_PROVIDER: 'smtp.gmail.com',
     // PROVIDER_USERNAME: 'testsupport@fusion24x7.com',
     PROVIDER_USERNAME: 'jitendrabakolia0@gmail.com',
     PROVIDER_PASSWORD: 'qjqd axzl nxah gmor',
@@ -39,6 +45,7 @@ const emailInfo = {
     PROVIDER_PORT: 587,
 
     DEVELOPER_EMAIL: 'jitendrabakolia.dev@gmail.com',
+    ASHU_EMAIL: 'bankashu74@gmail.com',
     // DEVELOPER_EMAIL: 'jitenagami@gmail.com',
 }
 
@@ -47,16 +54,16 @@ const emailType = {
 }
 
 const emailHeading = {
-    FROM_JITEN_TECH : "Email Received from Jiten.Tech",
-    FROM_DEVASHU : "Email Received from Devashu.me",
+    FROM_JITEN_TECH: "Email Received from Jiten.Tech",
+    FROM_DEVASHU: "Email Received from Devashu.me",
 }
 
 const web = {
-    JITEN : "https://jiten.tech"
+    JITEN: "https://jiten.tech"
 }
 
 const imagePath = {
-    LOGO : "/logo-name-clear.png"
+    LOGO: "/logo-name-clear.png"
 }
 
 const deleteFile = {
@@ -75,6 +82,10 @@ const state = {
     INACTIVE: false,
 }
 
+const subject = {
+    ASHU_EMAIL: "Received From Devashu.me"
+}
+
 module.exports = {
     port,
     path,
@@ -87,5 +98,7 @@ module.exports = {
     imagePath,
     deleteFile,
     status,
-    state
+    state,
+    receiver,
+    subject
 };

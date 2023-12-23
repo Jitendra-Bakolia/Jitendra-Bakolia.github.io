@@ -169,7 +169,7 @@ module.exports.getEmailBody = async function (data, type) {
 							<tr>
 								<td bgcolor="#ffffff" align="left"
 									style="padding: 30px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 20px;">
-									<p style="margin:0">Hy Jiten, <span style="color:#5599ff"></span>
+									<p style="margin:0">Hy ${data.receiver && data.receiver == constants.receiver.ASHU ? "Ashu" : "Jiten"}, <span style="color:#5599ff"></span>
 									</p>
 									<br>`
 
