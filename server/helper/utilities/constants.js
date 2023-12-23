@@ -20,6 +20,7 @@ const page = {
     WEBTECH: "webtech.html",
     PORTFOLIO: "portfolio.html",
     EMAILS: "email-list.html",
+    ASHU_EMAILS: "ashu-email-list.html",
 }
 
 const serverError = {

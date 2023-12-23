@@ -88,10 +88,21 @@ module.exports.sendEmailToDevashu = async function (req, res) {
         await email.sendMailToAshu(emailObj);
 
         //Store data in database.
-        // await commonDao.saveEmailInfo(emailObj);
+        await commonDao.saveAshuEmailInfo(emailObj);
         res.status(httpStatus.OK).json({ message: constants.serverError.EMAIL_SEND });
     } catch (error) {
         console.error(`Error occurs while sending email to Ashu : `, error);
+        res.status(httpStatus.SERVER_ERROR).json({ message: constants.serverError.SOMTHING_WENT_WRONG });
+    }
+}
+
+// fetching ashu email list . . .
+module.exports.fetchAshuEmailList = async function (req, res) {
+    try {
+        let emailList = await commonDao.fetchAllAshuEmailInfo();
+        res.status(httpStatus.OK).json({ emails: emailList });
+    } catch (error) {
+        console.error(`Error occurs while sending email list : `, error);
         res.status(httpStatus.SERVER_ERROR).json({ message: constants.serverError.SOMTHING_WENT_WRONG });
     }
 }

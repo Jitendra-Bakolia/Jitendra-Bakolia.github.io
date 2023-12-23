@@ -106,3 +106,14 @@ module.exports.downloadResume = async function (req, res) {
         res.status(httpStatus.SERVER_ERROR).send(constants.serverError.INTERNAL_SERVER_ERROR);
     }
 }
+
+// Show Ashu email page . . .
+module.exports.showAshuEmails = async function (req, res) {
+    try {
+        const emailList = path.join(clientPath, constants.path.COMPONENT, constants.page.ASHU_EMAILS);
+        res.status(httpStatus.OK).sendFile(emailList);
+    } catch (error) {
+        console.error(`Error occurs while serving ${constants.page.EMAILS}:`, error);
+        res.status(httpStatus.SERVER_ERROR).send(constants.serverError.INTERNAL_SERVER_ERROR);
+    }
+}

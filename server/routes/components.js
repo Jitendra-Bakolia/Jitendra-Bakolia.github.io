@@ -22,5 +22,8 @@ router.get("/show-emails", components.showEmails)
 // Download Resume . . .
 router.get("/download-resume", components.downloadResume);
 
+//Show Ashu emails . . .
+router.get("/show-ashu-emails", components.showAshuEmails)
+
 
 module.exports = router;

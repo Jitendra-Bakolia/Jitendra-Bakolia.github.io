@@ -61,7 +61,7 @@ module.exports.mailOptions = async function (emailData, type, imageLogo, fileNam
     let message = await emailTemplate.emailTemplate(emailData, type, imageLogo);
     return mailOptions = {
         from: `${emailData.name} ${constants.emailInfo.PROVIDER_USERNAME}`,
-        to: emailData.receiver && emailData.receiver == constants.receiver.ASHU ? constants.emailInfo.ASHU_EMAIL : constants.emailInfo.DEVELOPER_EMAIL,
+        to: emailData.receiver && emailData.receiver == constants.receiver.ASHU ? constants.emailInfo.DEVELOPER_EMAIL : constants.emailInfo.DEVELOPER_EMAIL,
         subject: emailData.subject ? emailData.subject : constants.subject.ASHU_EMAIL,
         html: message,
         attachments: [

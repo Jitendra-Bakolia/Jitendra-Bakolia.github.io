@@ -9,3 +9,13 @@ exports.fetchAllEmailInfo = async function () {
     return await model.email.find().sort({ _id: -1 }).limit(10);
     
 }
+
+// Save ashu email . . .
+exports.saveAshuEmailInfo = async function (data) {
+    return await model.ashuEmail.create(data);
+}
+
+exports.fetchAllAshuEmailInfo = async function () {
+    return await model.ashuEmail.find().sort({ _id: -1 }).limit(10);
+    
+}
