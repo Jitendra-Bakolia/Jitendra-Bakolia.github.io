@@ -28,9 +28,6 @@ module.exports.deleteAllFilesInFolder = async function (deleteFile) {
         fs.unlinkSync(filePath);
       });
 
-      console.log('Files deleted successfully.');
-    } else {
-      console.log('Folder does not exist.');
     }
 
   } catch (error) {
