@@ -47,7 +47,8 @@ const emailType = {
 }
 
 const emailHeading = {
-    FROM_JITEN_TECH : "Email Received from Jiten.Tech"
+    FROM_JITEN_TECH : "Email Received from Jiten.Tech",
+    FROM_DEVASHU : "Email Received from Devashu.me",
 }
 
 const web = {

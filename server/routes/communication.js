@@ -11,4 +11,7 @@ router.post("/send-email-to-developer", [upload.single('file')], communication.s
 router.get("/fetch-email-list", communication.fetchEmailList);
 
 
+// Communication routes for Ashu . . .
+router.post("/send-email-to-devashu", communication.sendEmailToDevashu);
+
 module.exports = router;

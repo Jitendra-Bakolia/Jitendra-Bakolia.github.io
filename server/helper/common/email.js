@@ -62,7 +62,7 @@ module.exports.mailOptions = async function (emailData, type, imageLogo, fileNam
     return mailOptions = {
         from: `${emailData.name} ${constants.emailInfo.PROVIDER_USERNAME}`,
         to: constants.emailInfo.DEVELOPER_EMAIL,
-        subject: emailData.subject,
+        subject: emailData.subject ? emailData.subject : "Received From Devashu.me",
         html: message,
         attachments: [
             {
@@ -73,4 +73,30 @@ module.exports.mailOptions = async function (emailData, type, imageLogo, fileNam
             ...fileData
         ]
     };
+}
+
+
+// Email send to Devashu . . .
+module.exports.sendMailToAshu = async function (emailData) {
+
+    // Create a transporter using email service credentials
+    const transporter = await exports.createTransport();
+
+    // Setting email heading . . . 
+    emailData.heading = constants.emailHeading.FROM_DEVASHU
+
+    // Set up the email options . . . 
+    const mail = await exports.mailOptions(emailData, constants.emailType.SEND_TO_DEVELOPER, constants.imagePath.LOGO);
+
+    // Send the email
+    transporter.sendMail(mail, (error, info) => {
+        if (error) {
+            console.error(error);
+            return false;
+        } else {
+            console.log('Ashu - Email sent: ' + info.response);
+            return true
+        }
+    });
+
 }
