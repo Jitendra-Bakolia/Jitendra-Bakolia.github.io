@@ -19,6 +19,7 @@ const page = {
     NEDIAZ: "nediaz.html",
     WEBTECH: "webtech.html",
     PORTFOLIO: "portfolio.html",
+    AGROCARE: "agrocare.html",
     EMAILS: "email-list.html",
     ASHU_EMAILS: "ashu-email-list.html",
 }

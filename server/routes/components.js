@@ -15,6 +15,7 @@ router.get("/get-begenieus-page", components.beGenieUs)
 router.get("/get-nediaz-page", components.nediaz)
 router.get("/get-webtech-page", components.webTech)
 router.get("/get-portfolio-page", components.portFolio)
+router.get("/get-agrocare-page", components.agroCare)
 
 //Show all emails . . .
 router.get("/show-emails", components.showEmails)

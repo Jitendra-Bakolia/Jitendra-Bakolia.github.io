@@ -3,9 +3,9 @@ const httpStatus = require('../../helper/utilities/http-status');
 const constants = require('../../helper/utilities/constants');
 const clientPath = path.resolve(__dirname, '../../');
 const commonDao = require('../../dao/common/common');
-// Common component routes . . .
+//& Common component routes . . .
 
-// Main Index file . . . 
+//^ Main Index file . . . 
 module.exports.mainIndexPage = async function (req, res) {
     try {
         const indexPath = path.join(clientPath, constants.path.CLIENT, constants.page.INDEX);
@@ -16,7 +16,7 @@ module.exports.mainIndexPage = async function (req, res) {
     }
 }
 
-// Stikkum Page . . .
+//^ Stikkum Page . . .
 module.exports.stikkumPage = async function (req, res) {
     try {
         const stikkumPath = path.join(clientPath, constants.path.COMPONENT, constants.page.STIKKUM);
@@ -28,7 +28,7 @@ module.exports.stikkumPage = async function (req, res) {
 }
 
 
-// SmartContectManager Page . . .
+//^ SmartContectManager Page . . .
 module.exports.smartContectManager = async function (req, res) {
     try {
         const smartContectManagerPath = path.join(clientPath, constants.path.COMPONENT, constants.page.SMART_CONTECT_MANAGER);
@@ -40,7 +40,7 @@ module.exports.smartContectManager = async function (req, res) {
 }
 
 
-// BeGenieUs Page . . .
+//^ BeGenieUs Page . . .
 module.exports.beGenieUs = async function (req, res) {
     try {
         const beGenieUsPath = path.join(clientPath, constants.path.COMPONENT, constants.page.BEGENIEUS);
@@ -51,7 +51,7 @@ module.exports.beGenieUs = async function (req, res) {
     }
 }
 
-// Nediaz Page . . .
+//^ Nediaz Page . . .
 module.exports.nediaz = async function (req, res) {
     try {
         const nediazPath = path.join(clientPath, constants.path.COMPONENT, constants.page.NEDIAZ);
@@ -63,7 +63,7 @@ module.exports.nediaz = async function (req, res) {
 }
 
 
-// webTech Page . . .
+//^ webTech Page . . .
 module.exports.webTech = async function (req, res) {
     try {
         const webTechPath = path.join(clientPath, constants.path.COMPONENT, constants.page.WEBTECH);
@@ -74,7 +74,7 @@ module.exports.webTech = async function (req, res) {
     }
 }
 
-// Portfolio page . . .
+//^ Portfolio page . . .
 module.exports.portFolio = async function (req, res) {
     try {
         const portFolioPath = path.join(clientPath, constants.path.COMPONENT, constants.page.PORTFOLIO);
@@ -85,7 +85,20 @@ module.exports.portFolio = async function (req, res) {
     }
 }
 
-// Show email page . . .
+//^ AgroCare page . . .
+module.exports.agroCare = async function (req, res) {
+    try {
+        const portFolioPath = path.join(clientPath, constants.path.COMPONENT, constants.page.AGROCARE);
+        console.log(`🙈 🙉 🙊 ~ file: components.js:93 ~ portFolioPath : `, portFolioPath)
+
+        res.status(httpStatus.OK).sendFile(portFolioPath);
+    } catch (error) {
+        console.error(`Error occurs while serving ${constants.page.AGROCARE}:`, error);
+        res.status(httpStatus.SERVER_ERROR).send(constants.serverError.INTERNAL_SERVER_ERROR);
+    }
+}
+
+//^ Show email page . . .
 module.exports.showEmails = async function (req, res) {
     try {
         const emailList = path.join(clientPath, constants.path.COMPONENT, constants.page.EMAILS);
@@ -96,7 +109,7 @@ module.exports.showEmails = async function (req, res) {
     }
 }
 
-// Download resume . . .
+//^ Download resume . . .
 module.exports.downloadResume = async function (req, res) {
     try{
         const resumePath = path.join(__dirname, '../../../client/assets/img/resume/Jitendra.pdf');
@@ -107,7 +120,7 @@ module.exports.downloadResume = async function (req, res) {
     }
 }
 
-// Show Ashu email page . . .
+//^ Show Ashu email page . . .
 module.exports.showAshuEmails = async function (req, res) {
     try {
         const emailList = path.join(clientPath, constants.path.COMPONENT, constants.page.ASHU_EMAILS);

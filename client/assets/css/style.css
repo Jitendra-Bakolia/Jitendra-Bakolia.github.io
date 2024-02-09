@@ -1309,3 +1309,7 @@ label.error {
 .mb-5px {
   margin-bottom: 5px !important;
 }
+
+.border-1px {
+  border: 1px solid lightgray;
+}
