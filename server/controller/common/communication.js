@@ -106,3 +106,38 @@ module.exports.fetchAshuEmailList = async function (req, res) {
         res.status(httpStatus.SERVER_ERROR).json({ message: constants.serverError.SOMTHING_WENT_WRONG });
     }
 }
+
+
+// Communication related routes for OffCodes Studio . . .
+module.exports.sendEmailToOffCodes = async function (req, res) {
+    try {
+
+        //Obj to save in Mongo DB
+        var emailObj = {
+            name: req.body.name,
+            email: req.body.email,
+            message: req.body.message,
+            receiver: constants.receiver.OFFCODE_STUDIO,
+        }
+
+        await email.sendMailToOffCodes(emailObj);
+
+        //Store data in database.
+        await commonDao.saveOffCodesEmailInfo(emailObj);
+        res.status(httpStatus.OK).json({ message: constants.serverError.EMAIL_SEND });
+    } catch (error) {
+        console.error(`Error occurs while sending email to OffCodes : `, error);
+        res.status(httpStatus.SERVER_ERROR).json({ message: constants.serverError.SOMTHING_WENT_WRONG });
+    }
+}
+
+// fetching OffCodes Studio email list . . .
+module.exports.fetchOffCodesEmailList = async function (req, res) {
+    try {
+        let emailList = await commonDao.fetchAllOffCodesEmailInfo();
+        res.status(httpStatus.OK).json({ emails: emailList });
+    } catch (error) {
+        console.error(`Error occurs while sending email list : `, error);
+        res.status(httpStatus.SERVER_ERROR).json({ message: constants.serverError.SOMTHING_WENT_WRONG });
+    }
+}

@@ -33,6 +33,7 @@ const serverError = {
 const receiver = {
     JITEN: 1,
     ASHU: 2,
+    OFFCODE_STUDIO: 3,
 
 }
 
@@ -58,6 +59,7 @@ const emailType = {
 const emailHeading = {
     FROM_JITEN_TECH: "Email Received from Jiten.Tech",
     FROM_DEVASHU: "Email Received from Devashu.me",
+    FROM_OFFCODE_STUDIO: "Email Received from OffCodes Studio",
 }
 
 const web = {
@@ -85,7 +87,8 @@ const state = {
 }
 
 const subject = {
-    ASHU_EMAIL: "Received From Devashu.me"
+    ASHU_EMAIL: "Received From Devashu.me",
+    FROM_OFFCODE_STUDIO: "Email Received from OffCodes Studio",
 }
 
 module.exports = {

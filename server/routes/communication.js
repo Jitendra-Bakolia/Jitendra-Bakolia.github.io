@@ -13,6 +13,10 @@ router.get("/fetch-email-list", communication.fetchEmailList);
 
 // Communication routes for Ashu . . .
 router.post("/send-email-to-devashu", communication.sendEmailToDevashu);
-router.get("/fetch-ashu--email-list", communication.fetchAshuEmailList);
+router.get("/fetch-ashu-email-list", communication.fetchAshuEmailList);
+
+// Communication routes for OffCodes . . .
+router.post("/send-email-to-offcodes", communication.sendEmailToOffCodes);
+router.get("/fetch-offcodes-email-list", communication.fetchOffCodesEmailList);
 
 module.exports = router;

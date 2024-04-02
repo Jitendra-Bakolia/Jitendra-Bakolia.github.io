@@ -19,3 +19,13 @@ exports.fetchAllAshuEmailInfo = async function () {
     return await model.ashuEmail.find().sort({ _id: -1 }).limit(10);
     
 }
+
+// Save OffCodes Studio email . . .
+exports.saveOffCodesEmailInfo = async function (data) {
+    return await model.offCodesEmail.create(data);
+}
+
+exports.fetchAllOffCodesEmailInfo = async function () {
+    return await model.offCodesEmail.find().sort({ _id: -1 }).limit(10);
+    
+}
