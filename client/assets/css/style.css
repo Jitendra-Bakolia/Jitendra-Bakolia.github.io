@@ -1252,6 +1252,10 @@ section {
   width: 184px;
 }
 
+.width-250{
+  width: 250px;
+}
+
 .font-bold {
   font-weight: bold;
 }

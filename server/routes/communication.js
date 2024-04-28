@@ -6,16 +6,16 @@ const path = require("path");
 const upload = multer({ dest: path.join(__dirname, '../temporary/upload/') });
 
 
-// All Communication routes . . . 
+//~ All Communication routes . . . 
 router.post("/send-email-to-developer", [upload.single('file')], communication.sendEmailToDeveloper);
 router.get("/fetch-email-list", communication.fetchEmailList);
 
 
-// Communication routes for Ashu . . .
+//~ Communication routes for Ashu . . .
 router.post("/send-email-to-devashu", communication.sendEmailToDevashu);
 router.get("/fetch-ashu-email-list", communication.fetchAshuEmailList);
 
-// Communication routes for OffCodes . . .
+//~ Communication routes for OffCodes . . .
 router.post("/send-email-to-offcodes", communication.sendEmailToOffCodes);
 router.get("/fetch-offcodes-email-list", communication.fetchOffCodesEmailList);
 
